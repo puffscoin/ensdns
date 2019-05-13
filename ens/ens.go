@@ -20,11 +20,11 @@ package ens
 import (
     "strings"
 
-    "github.com/arachnid/ensdns/ens/contract"
+    "github.com/puffscoin/ensdns/ens/contract"
     "github.com/miekg/dns"
-    "github.com/ethereum/go-ethereum/accounts/abi/bind"
-    "github.com/ethereum/go-ethereum/common"
-    "github.com/ethereum/go-ethereum/crypto"
+    "github.com/puffscoin/go-puffscoin/accounts/abi/bind"
+    "github.com/puffscoin/go-puffscoin/common"
+    "github.com/puffscoin/go-puffscoin/crypto"
 )
 
 func NameHash(name string) common.Hash {
