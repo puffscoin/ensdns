@@ -29,19 +29,19 @@ import (
 
 	"github.com/arachnid/ensdns/ens"
 	"github.com/arachnid/ensdns/utils"
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	ethutils "github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/puffscoin/go-puffscoin/accounts"
+	"github.com/puffscoin/go-puffscoin/accounts/abi/bind"
+	ethutils "github.com/puffscoin/go-puffscoin/cmd/utils"
+	"github.com/puffscoin/go-puffscoin/common"
+	"github.com/puffscoin/go-puffscoin/core/types"
+	"github.com/puffscoin/go-puffscoin/ethclient"
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/miekg/dns"
 )
 
 var (
-	ethapiFlag          = flag.String("ethapi", "http://localhost:8545", "Path to connect to Ethereum node on")
-	nsDomainFlag        = flag.String("nsdomain", ".ens.domains.", "Domain name for this ENS server")
+	ethapiFlag          = flag.String("ethapi", "http://localhost:11363", "Path to connect to puffscoin node on")
+	nsDomainFlag        = flag.String("nsdomain", ".ens.domains.", "Domain name for this PUFFScoin-ENS server")
 
 	uploadFlagSet       = flag.NewFlagSet("upload", flag.ExitOnError)
 	uploadKeystoreFlag  = uploadFlagSet.String("keystore", "", "Path to keystore")
@@ -74,7 +74,7 @@ func main() {
 
 	client, err := ethclient.Dial(*ethapiFlag)
 	if err != nil {
-		log.Fatalf("Error connecting to Ethereum API: %v", err)
+		log.Fatalf("Error connecting to PUFFScoin API: %v", err)
 	}
 
 	args := flag.Args()
@@ -82,7 +82,7 @@ func main() {
 		fmt.Println("usage: ensdns <command> [args]")
 		fmt.Println("Commands include:")
 		fmt.Println("  serve <address>   Start DNS server listening on <address>")
-		fmt.Println("  upload <filename> Upload the provided zonefile to ENS")
+		fmt.Println("  upload <filename> Upload the provided zonefile to PUFFScoin-ENS")
 		os.Exit(1)
 	}
 
@@ -195,7 +195,7 @@ func upload(client *ethclient.Client, args []string) {
 
 	registry, err := ens.New(client, registryAddress, txopts)
 	if err != nil {
-		fmt.Printf("Error constructing ENS instance: %v\n", err)
+		fmt.Printf("Error constructing PUFFScoin-ENS instance: %v\n", err)
 		os.Exit(1)
 	}
 
