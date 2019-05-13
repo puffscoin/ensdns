@@ -6,10 +6,10 @@ package contract
 import (
 	"strings"
 
-	"github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/puffscoin/go-puffscoin/accounts/abi"
+	"github.com/puffscoin/go-puffscoin/accounts/abi/bind"
+	"github.com/puffscoin/go-puffscoin/common"
+	"github.com/puffscoin/go-puffscoin/core/types"
 )
 
 // ENSABI is the input ABI used to generate the binding from.
@@ -18,7 +18,7 @@ const ENSABI = "[{\"constant\":true,\"inputs\":[{\"name\":\"node\",\"type\":\"by
 // ENSBin is the compiled bytecode used for deploying new contracts.
 const ENSBin = `0x606060405260008080526020527fad3228b676f7d3cd4284a5443f17f1962b36e491b30a40b2405849e597ba5fb580546c0100000000000000000000000033810204600160a060020a031990911617905561044b8061005e6000396000f3606060405236156100615760e060020a60003504630178b8bf811461006657806302571be31461009257806306ab5923146100ba57806314ab9038146100f657806316a25cbd1461012f5780631896f70a146101635780635b0fc9c31461019c575b610002565b34610002576101d5600435600081815260208190526040902060010154600160a060020a03165b919050565b34610002576101d5600435600081815260208190526040902054600160a060020a031661008d565b34610002576101f16004356024356044356000838152602081905260408120548490600160a060020a0390811633919091161461021057610002565b34610002576101f16004356024356000828152602081905260409020548290600160a060020a039081163391909116146102b357610002565b34610002576101f360043560008181526020819052604090206001015467ffffffffffffffff60a060020a9091041661008d565b34610002576101f16004356024356000828152602081905260409020548290600160a060020a0390811633919091161461035657610002565b34610002576101f16004356024356000828152602081905260409020548290600160a060020a039081163391909116146103d257610002565b60408051600160a060020a039092168252519081900360200190f35b005b6040805167ffffffffffffffff9092168252519081900360200190f35b60408051868152602080820187905282519182900383018220600160a060020a03871683529251929450869288927fce0457fe73731f824cc272376169235128c118b49d344817417c6d108d155e8292908290030190a382600060005060008460001916815260200190815260200160002060005060000160006101000a815481600160a060020a030219169083606060020a9081020402179055505050505050565b6040805167ffffffffffffffff84168152905184917f1d4f9bbfc9cab89d66e1a1562f2233ccbf1308cb4f63de2ead5787adddb8fa68919081900360200190a26000838152602081905260409020600101805478010000000000000000000000000000000000000000000000008085020460a060020a027fffffffff0000000000000000ffffffffffffffffffffffffffffffffffffffff909116179055505050565b60408051600160a060020a0384168152905184917f335721b01866dc23fbee8b6b2c7b1e14d6f05c28cd35a2c934239f94095602a0919081900360200190a260008381526020819052604090206001018054606060020a8085020473ffffffffffffffffffffffffffffffffffffffff19909116179055505050565b60408051600160a060020a0384168152905184917fd4735d920b0f87494915f556dd9b54c8f309026070caea5c737245152564d266919081900360200190a260008381526020819052604090208054606060020a8085020473ffffffffffffffffffffffffffffffffffffffff1990911617905550505056`
 
-// DeployENS deploys a new Ethereum contract, binding an instance of ENS to it.
+// DeployENS deploys a new puffscoin contract, binding an instance of ENS to it.
 func DeployENS(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *ENS, error) {
 	parsed, err := abi.JSON(strings.NewReader(ENSABI))
 	if err != nil {
@@ -37,17 +37,17 @@ type ENS struct {
 	ENSTransactor // Write-only binding to the contract
 }
 
-// ENSCaller is an auto generated read-only Go binding around an Ethereum contract.
+// ENSCaller is an auto generated read-only Go binding around a puffscoin contract.
 type ENSCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// ENSTransactor is an auto generated write-only Go binding around an Ethereum contract.
+// ENSTransactor is an auto generated write-only Go binding around a puffscoin contract.
 type ENSTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// ENSSession is an auto generated Go binding around an Ethereum contract,
+// ENSSession is an auto generated Go binding around a puffscoin contract,
 // with pre-set call and transact options.
 type ENSSession struct {
 	Contract     *ENS              // Generic contract binding to set the session for
@@ -55,31 +55,31 @@ type ENSSession struct {
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// ENSCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// ENSCallerSession is an auto generated read-only Go binding around a puffscoin contract,
 // with pre-set call options.
 type ENSCallerSession struct {
 	Contract *ENSCaller    // Generic contract caller binding to set the session for
 	CallOpts bind.CallOpts // Call options to use throughout this session
 }
 
-// ENSTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// ENSTransactorSession is an auto generated write-only Go binding around a puffscoin contract,
 // with pre-set transact options.
 type ENSTransactorSession struct {
 	Contract     *ENSTransactor    // Generic contract transactor binding to set the session for
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// ENSRaw is an auto generated low-level Go binding around an Ethereum contract.
+// ENSRaw is an auto generated low-level Go binding around a puffscoin contract.
 type ENSRaw struct {
 	Contract *ENS // Generic contract binding to access the raw methods on
 }
 
-// ENSCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+// ENSCallerRaw is an auto generated low-level read-only Go binding around a puffscoin contract.
 type ENSCallerRaw struct {
 	Contract *ENSCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// ENSTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+// ENSTransactorRaw is an auto generated low-level write-only Go binding around a puffscoin contract.
 type ENSTransactorRaw struct {
 	Contract *ENSTransactor // Generic write-only contract binding to access the raw methods on
 }
