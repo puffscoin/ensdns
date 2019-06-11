@@ -31,16 +31,16 @@ import (
 	"github.com/arachnid/ensdns/utils"
 	"github.com/puffscoin/go-puffscoin/accounts"
 	"github.com/puffscoin/go-puffscoin/accounts/abi/bind"
-	ethutils "github.com/puffscoin/go-puffscoin/cmd/utils"
+	puffsutils "github.com/puffscoin/go-puffscoin/cmd/utils"
 	"github.com/puffscoin/go-puffscoin/common"
 	"github.com/puffscoin/go-puffscoin/core/types"
-	"github.com/puffscoin/go-puffscoin/ethclient"
+	"github.com/puffscoin/go-puffscoin/puffsclient"
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/miekg/dns"
 )
 
 var (
-	ethapiFlag          = flag.String("ethapi", "http://localhost:11363", "Path to connect to puffscoin node on")
+	puffsapiFlag          = flag.String("puffsapi", "http://localhost:11363", "Path to connect to puffscoin node on")
 	nsDomainFlag        = flag.String("nsdomain", ".ens.domains.", "Domain name for this PUFFScoin-ENS server")
 
 	uploadFlagSet       = flag.NewFlagSet("upload", flag.ExitOnError)
@@ -72,7 +72,7 @@ var (
 func main() {
 	flag.Parse()
 
-	client, err := ethclient.Dial(*ethapiFlag)
+	client, err := puffsclient.Dial(*puffsapiFlag)
 	if err != nil {
 		log.Fatalf("Error connecting to PUFFScoin API: %v", err)
 	}
@@ -109,7 +109,7 @@ func (sig Signer) Sign(signer types.Signer, address common.Address, tx *types.Tr
 
 func getAccount() (*accounts.Manager, accounts.Account, error) {
 	accman := accounts.NewManager(*uploadKeystoreFlag, 0, 0)
-	account, err := ethutils.MakeAddress(accman, *uploadAccountFlag)
+	account, err := puffsutils.MakeAddress(accman, *uploadAccountFlag)
 	if err != nil {
 		return nil, accounts.Account{}, fmt.Errorf("Error parsing account: %s", err)
 	}
@@ -149,7 +149,7 @@ func readRRs(filename string) (rrs []dns.RR, soa *dns.SOA, err error) {
 	return rrs, soa, nil
 }
 
-func upload(client *ethclient.Client, args []string) {
+func upload(client *puffsclient.Client, args []string) {
 	uploadFlagSet.Parse(args)
 	args = uploadFlagSet.Args()
 
@@ -229,7 +229,7 @@ type zoneCacheEntry struct {
 }
 
 type ENSDNS struct {
-	client *ethclient.Client
+	client *puffsclient.Client
 	cache *lru.ARCCache
 }
 
@@ -399,7 +399,7 @@ func runServer(addr, proto string) {
 	}
 }
 
-func serve(client *ethclient.Client, args []string) {
+func serve(client *puffsclient.Client, args []string) {
 	serveFlagSet.Parse(args)
 	args = serveFlagSet.Args()
 
