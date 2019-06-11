@@ -31,7 +31,7 @@ func DeployENS(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Ad
 	return address, tx, &ENS{ENSCaller: ENSCaller{contract: contract}, ENSTransactor: ENSTransactor{contract: contract}}, nil
 }
 
-// ENS is an auto generated Go binding around an Ethereum contract.
+// ENS is an auto generated Go binding around a PUFFScoin contract.
 type ENS struct {
 	ENSCaller     // Read-only binding to the contract
 	ENSTransactor // Write-only binding to the contract
@@ -326,7 +326,7 @@ const FIFSRegistrarABI = "[{\"constant\":false,\"inputs\":[{\"name\":\"subnode\"
 // FIFSRegistrarBin is the compiled bytecode used for deploying new contracts.
 const FIFSRegistrarBin = `0x60606040818152806106aa833960a0905251608051600080546c0100000000000000000000000080850204600160a060020a031990911617905560405182906103aa806100a58339018082600160a060020a03168152602001915050604051809103906000f0801560025760018054600160a060020a0319166c01000000000000000000000000928302929092049190911790556002555061025b8061044f6000396000f360606040526040516020806103aa833950608060405251600080546c0100000000000000000000000080840204600160a060020a0319909116179055506103608061004a6000396000f3606060405236156100565760e060020a600035046301ffc9a781146100635780632dff6941146100d75780633b3b57de1461010057806341b9dc2b1461013c578063c3d014d6146101da578063d5fa2b0014610267575b34610002576102f4610002565b34610002576102f660043560007f3b3b57de00000000000000000000000000000000000000000000000000000000600160e060020a0319831614806100d157507fd8389dc500000000000000000000000000000000000000000000000000000000600160e060020a03198316145b92915050565b346100025760043560009081526002602052604090205460408051918252519081900360200190f35b3461000257600435600090815260016020526040902054600160a060020a031660408051600160a060020a039092168252519081900360200190f35b34610002576102f660043560243560007f6164647200000000000000000000000000000000000000000000000000000000821480156101915750600083815260016020526040902054600160a060020a031615155b806101d357507f6861736800000000000000000000000000000000000000000000000000000000821480156101d3575060008381526002602052604090205415155b9392505050565b34610002576102f460043560243560008054604080516020908101849052815160e060020a6302571be30281526004810187905291518694600160a060020a033381169516936302571be393602480830194919391928390030190829087803b156100025760325a03f11561000257505060405151600160a060020a031691909114905061030a57610002565b34610002576102f460043560243560008054604080516020908101849052815160e060020a6302571be30281526004810187905291518694600160a060020a033381169516936302571be393602480830194919391928390030190829087803b156100025760325a03f11561000257505060405151600160a060020a031691909114905061031d57610002565b005b604080519115158252519081900360200190f35b5060009182526002602052604090912055565b600083815260016020526040902080546c010000000000000000000000008085020473ffffffffffffffffffffffffffffffffffffffff1990911617905550505056606060405260e060020a6000350463d22057a9811461001e575b610002565b34610002576100f1600435602435600254604080519182526020808301859052815192839003820183206000805494830181905283517f02571be300000000000000000000000000000000000000000000000000000000815260048101839052935191949093600160a060020a03909116926302571be39260248084019382900301818787803b156100025760325a03f11561000257505060405151915050600160a060020a038116158015906100e7575033600160a060020a031681600160a060020a031614155b156100f357610002565b005b60008054600254604080517f06ab5923000000000000000000000000000000000000000000000000000000008152600481019290925260248201889052600160a060020a03308116604484015290519216926306ab59239260648084019382900301818387803b156100025760325a03f11561000257505060008054600154604080517f1896f70a00000000000000000000000000000000000000000000000000000000815260048101889052600160a060020a0392831660248201529051919092169350631896f70a9260448084019391929182900301818387803b156100025760325a03f11561000257505060008054604080517f5b0fc9c300000000000000000000000000000000000000000000000000000000815260048101879052600160a060020a0388811660248301529151919092169350635b0fc9c39260448084019391929182900301818387803b156100025760325a03f115610002575050505050505056`
 
-// DeployFIFSRegistrar deploys a new Ethereum contract, binding an instance of FIFSRegistrar to it.
+// DeployFIFSRegistrar deploys a new PUFFScoin contract, binding an instance of FIFSRegistrar to it.
 func DeployFIFSRegistrar(auth *bind.TransactOpts, backend bind.ContractBackend, ensAddr common.Address, node [32]byte) (common.Address, *types.Transaction, *FIFSRegistrar, error) {
 	parsed, err := abi.JSON(strings.NewReader(FIFSRegistrarABI))
 	if err != nil {
@@ -339,23 +339,23 @@ func DeployFIFSRegistrar(auth *bind.TransactOpts, backend bind.ContractBackend, 
 	return address, tx, &FIFSRegistrar{FIFSRegistrarCaller: FIFSRegistrarCaller{contract: contract}, FIFSRegistrarTransactor: FIFSRegistrarTransactor{contract: contract}}, nil
 }
 
-// FIFSRegistrar is an auto generated Go binding around an Ethereum contract.
+// FIFSRegistrar is an auto generated Go binding around a PUFFScoin contract.
 type FIFSRegistrar struct {
 	FIFSRegistrarCaller     // Read-only binding to the contract
 	FIFSRegistrarTransactor // Write-only binding to the contract
 }
 
-// FIFSRegistrarCaller is an auto generated read-only Go binding around an Ethereum contract.
+// FIFSRegistrarCaller is an auto generated read-only Go binding around a PUFFScoin contract.
 type FIFSRegistrarCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// FIFSRegistrarTransactor is an auto generated write-only Go binding around an Ethereum contract.
+// FIFSRegistrarTransactor is an auto generated write-only Go binding around a PUFFScoin contract.
 type FIFSRegistrarTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// FIFSRegistrarSession is an auto generated Go binding around an Ethereum contract,
+// FIFSRegistrarSession is an auto generated Go binding around a PUFFScoin contract,
 // with pre-set call and transact options.
 type FIFSRegistrarSession struct {
 	Contract     *FIFSRegistrar    // Generic contract binding to set the session for
@@ -363,31 +363,31 @@ type FIFSRegistrarSession struct {
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// FIFSRegistrarCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// FIFSRegistrarCallerSession is an auto generated read-only Go binding around a PUFFScoin contract,
 // with pre-set call options.
 type FIFSRegistrarCallerSession struct {
 	Contract *FIFSRegistrarCaller // Generic contract caller binding to set the session for
 	CallOpts bind.CallOpts        // Call options to use throughout this session
 }
 
-// FIFSRegistrarTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// FIFSRegistrarTransactorSession is an auto generated write-only Go binding around a PUFFScoin contract,
 // with pre-set transact options.
 type FIFSRegistrarTransactorSession struct {
 	Contract     *FIFSRegistrarTransactor // Generic contract transactor binding to set the session for
 	TransactOpts bind.TransactOpts        // Transaction auth options to use throughout this session
 }
 
-// FIFSRegistrarRaw is an auto generated low-level Go binding around an Ethereum contract.
+// FIFSRegistrarRaw is an auto generated low-level Go binding around a PUFFScoin contract.
 type FIFSRegistrarRaw struct {
 	Contract *FIFSRegistrar // Generic contract binding to access the raw methods on
 }
 
-// FIFSRegistrarCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+// FIFSRegistrarCallerRaw is an auto generated low-level read-only Go binding around aPUFFScoin  contract.
 type FIFSRegistrarCallerRaw struct {
 	Contract *FIFSRegistrarCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// FIFSRegistrarTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+// FIFSRegistrarTransactorRaw is an auto generated low-level write-only Go binding around a PUFFScoin contract.
 type FIFSRegistrarTransactorRaw struct {
 	Contract *FIFSRegistrarTransactor // Generic write-only contract binding to access the raw methods on
 }
@@ -493,7 +493,7 @@ const PublicResolverABI = "[{\"constant\":true,\"inputs\":[{\"name\":\"interface
 // PublicResolverBin is the compiled bytecode used for deploying new contracts.
 const PublicResolverBin = `0x60606040526040516020806103aa833950608060405251600080546c0100000000000000000000000080840204600160a060020a0319909116179055506103608061004a6000396000f3606060405236156100565760e060020a600035046301ffc9a781146100635780632dff6941146100d75780633b3b57de1461010057806341b9dc2b1461013c578063c3d014d6146101da578063d5fa2b0014610267575b34610002576102f4610002565b34610002576102f660043560007f3b3b57de00000000000000000000000000000000000000000000000000000000600160e060020a0319831614806100d157507fd8389dc500000000000000000000000000000000000000000000000000000000600160e060020a03198316145b92915050565b346100025760043560009081526002602052604090205460408051918252519081900360200190f35b3461000257600435600090815260016020526040902054600160a060020a031660408051600160a060020a039092168252519081900360200190f35b34610002576102f660043560243560007f6164647200000000000000000000000000000000000000000000000000000000821480156101915750600083815260016020526040902054600160a060020a031615155b806101d357507f6861736800000000000000000000000000000000000000000000000000000000821480156101d3575060008381526002602052604090205415155b9392505050565b34610002576102f460043560243560008054604080516020908101849052815160e060020a6302571be30281526004810187905291518694600160a060020a033381169516936302571be393602480830194919391928390030190829087803b156100025760325a03f11561000257505060405151600160a060020a031691909114905061030a57610002565b34610002576102f460043560243560008054604080516020908101849052815160e060020a6302571be30281526004810187905291518694600160a060020a033381169516936302571be393602480830194919391928390030190829087803b156100025760325a03f11561000257505060405151600160a060020a031691909114905061031d57610002565b005b604080519115158252519081900360200190f35b5060009182526002602052604090912055565b600083815260016020526040902080546c010000000000000000000000008085020473ffffffffffffffffffffffffffffffffffffffff1990911617905550505056`
 
-// DeployPublicResolver deploys a new Ethereum contract, binding an instance of PublicResolver to it.
+// DeployPublicResolver deploys a new PUFFScoin contract, binding an instance of PublicResolver to it.
 func DeployPublicResolver(auth *bind.TransactOpts, backend bind.ContractBackend, ensAddr common.Address) (common.Address, *types.Transaction, *PublicResolver, error) {
 	parsed, err := abi.JSON(strings.NewReader(PublicResolverABI))
 	if err != nil {
@@ -506,23 +506,23 @@ func DeployPublicResolver(auth *bind.TransactOpts, backend bind.ContractBackend,
 	return address, tx, &PublicResolver{PublicResolverCaller: PublicResolverCaller{contract: contract}, PublicResolverTransactor: PublicResolverTransactor{contract: contract}}, nil
 }
 
-// PublicResolver is an auto generated Go binding around an Ethereum contract.
+// PublicResolver is an auto generated Go binding around a PUFFScoin contract.
 type PublicResolver struct {
 	PublicResolverCaller     // Read-only binding to the contract
 	PublicResolverTransactor // Write-only binding to the contract
 }
 
-// PublicResolverCaller is an auto generated read-only Go binding around an Ethereum contract.
+// PublicResolverCaller is an auto generated read-only Go binding around aPUFFScoin  contract.
 type PublicResolverCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PublicResolverTransactor is an auto generated write-only Go binding around an Ethereum contract.
+// PublicResolverTransactor is an auto generated write-only Go binding around a  PUFFScoincontract.
 type PublicResolverTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PublicResolverSession is an auto generated Go binding around an Ethereum contract,
+// PublicResolverSession is an auto generated Go binding around a PUFFScoin contract,
 // with pre-set call and transact options.
 type PublicResolverSession struct {
 	Contract     *PublicResolver   // Generic contract binding to set the session for
@@ -530,31 +530,31 @@ type PublicResolverSession struct {
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// PublicResolverCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// PublicResolverCallerSession is an auto generated read-only Go binding around a PUFFScoin contract,
 // with pre-set call options.
 type PublicResolverCallerSession struct {
 	Contract *PublicResolverCaller // Generic contract caller binding to set the session for
 	CallOpts bind.CallOpts         // Call options to use throughout this session
 }
 
-// PublicResolverTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// PublicResolverTransactorSession is an auto generated write-only Go binding around a PUFFScoin contract,
 // with pre-set transact options.
 type PublicResolverTransactorSession struct {
 	Contract     *PublicResolverTransactor // Generic contract transactor binding to set the session for
 	TransactOpts bind.TransactOpts         // Transaction auth options to use throughout this session
 }
 
-// PublicResolverRaw is an auto generated low-level Go binding around an Ethereum contract.
+// PublicResolverRaw is an auto generated low-level Go binding around a PUFFScoin contract.
 type PublicResolverRaw struct {
 	Contract *PublicResolver // Generic contract binding to access the raw methods on
 }
 
-// PublicResolverCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+// PublicResolverCallerRaw is an auto generated low-level read-only Go binding around a PUFFScoin contract.
 type PublicResolverCallerRaw struct {
 	Contract *PublicResolverCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// PublicResolverTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+// PublicResolverTransactorRaw is an auto generated low-level write-only Go binding around a PUFFScoin contract.
 type PublicResolverTransactorRaw struct {
 	Contract *PublicResolverTransactor // Generic write-only contract binding to access the raw methods on
 }
